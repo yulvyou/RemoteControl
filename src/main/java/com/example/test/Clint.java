@@ -6,11 +6,17 @@ import com.example.test.factory.ThreadPoolFactory;
 import com.example.test.intface.ExecuteCommand;
 import com.example.test.reflect.FruitFactory;
 import com.example.test.reflect.interf.Fruit;
+import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  *
@@ -30,12 +36,22 @@ public class Clint {
         String Command = getCommandsFromServer(ClintConstant.schoolId,ClintConstant.clientNo);
 
         //执行相关命令
-        ThreadPoolFactory.getNormalPool().execute(new Runnable() {
+        Future<?> future = ThreadPoolFactory.getNormalPool().submit(new Runnable() {
             @Override
             public void run() {
                 executeCommand(Command);
             }
         });
+
+        try {
+            future.get(5,TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        }
 
 
     }//run
@@ -97,7 +113,12 @@ public class Clint {
         //执行相关操作
         if(executeCommand!=null){
             //下载文件
-            executeCommand.downloadFile(commandJson);
+            try {
+                executeCommand.downloadFile(commandJson);
+            }catch (Exception e){
+                log.error("下载文件失败：{}",e);
+            }
+
             //关闭程序
             executeCommand.closeApp("appName");
             //安装更新包

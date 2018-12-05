@@ -36,9 +36,9 @@ public class ThreadPoolProxy {
     /**
      * 提交任务
      */
-    public void submit(Runnable task)
+    public Future<?> submit(Runnable task)
     {
-        mExcutor.submit(task);
+        return mExcutor.submit(task);
     }//submit
 
     /**
