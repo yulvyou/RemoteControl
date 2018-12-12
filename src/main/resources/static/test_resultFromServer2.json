@@ -1,0 +1,15 @@
+{
+	"resultCode":"0",
+	"resultMessage":"操作成功",
+	"jarUrl":"http://localhost:8081/commandtest.jar",
+	"jarPath":"F:/ykt_test/commandtest.jar",
+	"jarName":"commandtest.jar",
+	"classPath":"com.example.remote.interfimpl.CommandTest",
+	"jarHashCode":"##$$@#",
+	"packageUrl":"http://www.xx.yy/package/v2.zip",
+	"packageHashCode":"#####v2",
+	"packagePath":"/###/##/",
+	"haveCommands":"true",
+	"duration":"5",
+	"commandID":"1001"
+}

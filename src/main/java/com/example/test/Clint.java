@@ -4,14 +4,9 @@ import com.example.test.constants.ClintConstant;
 import com.example.test.factory.CommandFactory;
 import com.example.test.factory.ThreadPoolFactory;
 import com.example.test.intface.ExecuteCommand;
-import com.example.test.reflect.FruitFactory;
-import com.example.test.reflect.interf.Fruit;
-import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -24,7 +19,7 @@ import java.util.concurrent.TimeoutException;
 @Slf4j
 public class Clint {
 
-    @Scheduled(cron = "0 15 10 ? * *")
+//    @Scheduled(cron = "0 15 10 ? * *")
     public void run() {
         //是否为第一次启动
         if (isFirstLunch()) {
@@ -33,7 +28,7 @@ public class Clint {
         }
 
         //向服务端请求本客户端需要执行的命令
-        String Command = getCommandsFromServer(ClintConstant.schoolId,ClintConstant.clientNo);
+        String Command = requestCommandsFromServer(ClintConstant.schoolId,ClintConstant.clientNo);
 
         //执行相关命令
         Future<?> future = ThreadPoolFactory.getNormalPool().submit(new Runnable() {
@@ -81,7 +76,7 @@ public class Clint {
      *
      * @param schoolId 学校id
      */
-    public String getCommandsFromServer(String schoolId,String clientNo) {
+    public String requestCommandsFromServer(String schoolId, String clientNo) {
 
         return null;
     }

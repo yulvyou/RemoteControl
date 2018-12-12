@@ -2,6 +2,7 @@ package com.example.test.reflect;
 
 
 import com.example.test.reflect.interf.Fruit;
+import com.example.test.utils.FileUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,16 +35,18 @@ public class FruitFactoryTest {
     @Test
     public void getAppleFromJar() throws Exception {
         /*动态加载指定类*/
-        File file=new File("F:/Projects/Test/jar/watermelon.jar");//类路径(包文件上一层)
-        URL url=file.toURI().toURL();
-        ClassLoader loader=new URLClassLoader(new URL[]{url});//创建类加载器
-        //import com.sun.org.apache.bcel.internal.util.ClassLoader;
-        //ClassLoader classLoader = new ClassLoader(new String[]{""});//类路径
-        Class<?> cls=loader.loadClass("com.example.test.reflect.interfimpl.Watermelon");//加载指定类，注意一定要带上类的包名
-        Object obj=cls.newInstance();//初始化一个实例
+//        File file=new File("F:/Projects/Test/jar/watermelon.jar");//类路径(包文件上一层)
+//        URL url=file.toURI().toURL();
+//        ClassLoader loader=new URLClassLoader(new URL[]{url});//创建类加载器
+//        //import com.sun.org.apache.bcel.internal.util.ClassLoader;
+//        //ClassLoader classLoader = new ClassLoader(new String[]{""});//类路径
+//        Class<?> cls=loader.loadClass("com.example.test.reflect.interfimpl.Watermelon");//加载指定类，注意一定要带上类的包名
+//        Fruit obj= (Fruit) cls.newInstance();//初始化一个实例
+//        obj.eat();
+//        Method method =cls.getMethod("eat");
+//        method.invoke(obj);
 
-        Method method =cls.getMethod("eat");
-        method.invoke(obj);
-
+        Fruit fruit = (Fruit) FileUtil.loadObjectFromJar("F:/Projects/Test/jar/watermelon.jar","com.example.test.reflect.interfimpl.Watermelon");
+        fruit.eat();
     }
 }

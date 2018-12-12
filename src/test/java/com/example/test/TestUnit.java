@@ -7,8 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.commons.beanutils.BeanUtils;
-import org.apache.commons.beanutils.ConvertUtils;
-import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
+import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -18,9 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.StringUtils;
 
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 import java.util.List;
@@ -76,6 +73,25 @@ public class TestUnit {
 
 
     /**
+     * 关闭程序
+     */
+    public static void shutdownProgram(String programName) {
+        String command = "taskkill /f /im " + programName;
+        Runtime runtime = Runtime.getRuntime();
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(runtime.exec(command).getInputStream()));
+            //StringBuffer b = new StringBuffer();
+            String line=null;
+            StringBuffer b=new StringBuffer();
+            while ((line=br.readLine())!=null) {
+                b.append(line+"\n");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    /**
      * 启动程序，可以是exe程序也可以是bat脚本
      * @param programPath
      * @throws IOException
@@ -99,10 +115,16 @@ public class TestUnit {
     }
 
     @Test
-    public void runEXETest() throws IOException {
+    public void startProgramTest() throws IOException {
 //        String programPath = "D:/360极速浏览器下载/wechat_devtools_1.02.1811150_x64.exe";
         String programPath = "C:/Users/Administrator/Desktop/run.bat";
         startProgram(programPath);
+    }
+
+
+    @Test
+    public void shutdownProgramTest() throws IOException {
+        shutdownProgram("Editor.exe");
     }
 }
 
