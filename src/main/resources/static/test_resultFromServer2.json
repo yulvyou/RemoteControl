@@ -11,5 +11,34 @@
 	"packagePath":"/###/##/",
 	"haveCommands":"true",
 	"duration":"5",
-	"commandID":"1001"
+	"programName":"Editor2.exe",
+	"rootPath":"",
+	"commandID":"1001",
+	"detail":
+	{
+		"version":2.0,
+		"preVersion":"1.0",
+		"desc":"修复若干bug。",
+		"lastRequesTime":"2018/10/10 00:12:12",
+		"schoolID":"51250",
+		"clientNo":"01",
+		"testResult":"#######",
+		"isFirstLaunch":"true",
+		"isSuccessInstall":"false",
+		"commandID":"1001",
+		"files": [
+			{
+				"fileName": "icon.png",
+				"savepath": "/bin"
+			},
+			{
+				"fileName": "release",
+				"savepath": "/jre"
+			},
+			{
+				"fileName": "src_css-api.zip",
+				"savepath": "/lib/src"
+			}
+		]
+	}
 }

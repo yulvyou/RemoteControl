@@ -2,14 +2,32 @@
 	"resultCode":"0",
 	"resultMessage":"操作成功",
 	"jarUrl":"http://localhost:8081/testcommond.jar",
-	"jarPath":"F:/ykt_test/testcommond.jar",
+	"jarPath":"F:/updateProgram/package/jar/testcommond.jar",
 	"jarName":"testcommond.jar",
 	"classPath":"com.example.remote.interfimpl.TestCommand",
-	"jarHashCode":"##$$@#",
-	"packageUrl":"http://www.xx.yy/package/v2.zip",
-	"packageHashCode":"#####v2",
-	"packagePath":"/###/##/",
+	"jarHashCode":"8242ecf15a3b16e8f205c8930edea991",
+	"packageUrl":"http://localhost:8081/2.0.zip",
+	"packageHashCode":"0c54533e091b3fd9beb3aed2a7c78f87",
+	"packagePath":"F:/updateProgram/package/2.0.zip",
 	"haveCommands":"true",
 	"duration":"5",
-	"commandID":"1001"
+	"programName":"Editor.exe",
+	"updateProgramRootPath":"F:/updateProgram",
+	"rootPath":"F:/csum",
+	"commandID":"1001",
+	"backFiles":["/bin","/conf","/jdk","/lib","/logs","/plugins","/config.json","/test.exe"],
+	"detail":
+	{
+		"version":2.0,
+		"preVersion":"1.0",
+		"desc":"修复若干bug。",
+		"lastRequesTime":"2018/10/10 00:12:12",
+		"schoolID":"51250",
+		"clientNo":"01",
+		"testResult":"#######",
+		"isFirstLaunch":"true",
+		"isSuccessInstall":"false",
+		"commandID":"1001",
+		"files": ["/lib/app.jar","/logs/log1.log"]
+	}
 }
