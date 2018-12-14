@@ -1,19 +1,22 @@
 {
 	"resultCode":"0",
 	"resultMessage":"操作成功",
-	"jarUrl":"http://localhost:8081/commandtest.jar",
-	"jarPath":"F:/ykt_test/commandtest.jar",
-	"jarName":"commandtest.jar",
-	"classPath":"com.example.remote.interfimpl.CommandTest",
-	"jarHashCode":"##$$@#",
-	"packageUrl":"http://www.xx.yy/package/v2.zip",
-	"packageHashCode":"#####v2",
-	"packagePath":"/###/##/",
+	"jarUrl":"http://localhost:8081/testcommond.jar",
+	"jarPath":"F:/updateProgram/package/jar/testcommond.jar",
+	"jarName":"testcommond.jar",
+	"classPath":"com.example.remote.interfimpl.TestCommand",
+	"jarHashCode":"8242ecf15a3b16e8f205c8930edea991",
+	"packageUrl":"http://localhost:8081/2.0.zip",
+	"packageHashCode":"0c54533e091b3fd9beb3aed2a7c78f87",
+	"packagePath":"F:/updateProgram/package/2.0.zip",
 	"haveCommands":"true",
 	"duration":"5",
-	"programName":"Editor2.exe",
-	"rootPath":"",
+	"programName":"Editor.exe",
+	"updateProgramRootPath":"F:/updateProgram",
+	"rootPath":"F:/csum",
+	"launchPath":"C:/Users/Administrator/AppData/Local/GitBook_Editor/app-7.0.12/Editor.exe",
 	"commandID":"1001",
+	"backFiles":["/bin","/conf","/jdk","/lib","/logs","/plugins","/config.json","/test.exe"],
 	"detail":
 	{
 		"version":2.0,
@@ -26,19 +29,6 @@
 		"isFirstLaunch":"true",
 		"isSuccessInstall":"false",
 		"commandID":"1001",
-		"files": [
-			{
-				"fileName": "icon.png",
-				"savepath": "/bin"
-			},
-			{
-				"fileName": "release",
-				"savepath": "/jre"
-			},
-			{
-				"fileName": "src_css-api.zip",
-				"savepath": "/lib/src"
-			}
-		]
+		"files": ["/lib/app.jar","/logs/log1.log"]
 	}
 }

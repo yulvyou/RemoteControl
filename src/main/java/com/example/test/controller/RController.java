@@ -25,6 +25,14 @@ public class RController {
 
     }
 
+    @GetMapping("/feedback")
+    public String feedback(@RequestParam("version") String version) {
+        if (Integer.valueOf(version) <= 2){
+            return FileUtil.readJsonFromFile("F:\\Projects\\Test\\MethodTest\\src\\main\\resources\\static\\test_resultFromServer"+version+".json");
+        }else{
+            return FileUtil.readJsonFromFile("F:\\Projects\\Test\\MethodTest\\src\\main\\resources\\static\\test_resultFromServer_null.json");
+        }
 
+    }
 
 }
