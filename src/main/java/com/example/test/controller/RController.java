@@ -16,7 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class RController {
     //订单详情
     @GetMapping("/get")
-    public String detail(@RequestParam("version") String version) {
+    public String detail(@RequestParam("version") String version,
+                         @RequestParam("schoolID") String schoolID,
+                         @RequestParam("clientNo") String clientNo,
+                         @RequestParam("plugins") String plugins,
+                         @RequestParam("macAddr") String macAddr) {
+        log.info("有请求");
         if (Integer.valueOf(version) <= 2){
             return FileUtil.readJsonFromFile("F:\\Projects\\Test\\MethodTest\\src\\main\\resources\\static\\test_resultFromServer"+version+".json");
         }else{

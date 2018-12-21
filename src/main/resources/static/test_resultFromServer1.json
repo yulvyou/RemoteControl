@@ -15,7 +15,7 @@
 	"updateProgramRootPath":"F:/updateProgram",
 	"rootPath":"F:/csum",
 	"launchPath":"C:/Users/Administrator/AppData/Local/GitBook_Editor/app-7.0.12/Editor.exe",
-	"commandID":"1001",
+	"commandID":"1002",
 	"backFiles":["/bin","/conf","/jdk","/lib","/logs","/plugins","/config.json","/test.exe"],
 	"detail":
 	{
@@ -28,7 +28,7 @@
 		"testResult":"#######",
 		"isFirstLaunch":"true",
 		"isSuccessInstall":"false",
-		"commandID":"1001",
-		"files": ["/lib/app.jar","/logs/log1.log"]
+		"commandID":"1002",
+		"files": ["/lib/app.jar"]
 	}
 }

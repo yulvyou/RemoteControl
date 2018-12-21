@@ -28,7 +28,7 @@ public class Clint {
         }
 
         //向服务端请求本客户端需要执行的命令
-        String Command = requestCommandsFromServer(ClintConstant.schoolId,ClintConstant.clientNo);
+        final String Command = requestCommandsFromServer(ClintConstant.schoolId,ClintConstant.clientNo);
 
         //执行相关命令
         Future<?> future = ThreadPoolFactory.getNormalPool().submit(new Runnable() {

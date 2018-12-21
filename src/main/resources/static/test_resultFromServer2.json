@@ -1,22 +1,23 @@
 {
 	"resultCode":"0",
 	"resultMessage":"操作成功",
-	"jarUrl":"http://localhost:8081/testcommond.jar",
-	"jarPath":"F:/updateProgram/package/jar/testcommond.jar",
-	"jarName":"testcommond.jar",
-	"classPath":"com.example.remote.interfimpl.TestCommand",
-	"jarHashCode":"8242ecf15a3b16e8f205c8930edea991",
+	"jarUrl":"http://localhost:8081/V2Command.jar",
+	"jarPath":"F:/updateProgram/package/jar/V2Command.jar",
+	"jarName":"V2Command.jar",
+	"classPath":"com.talkedu.uther.mach.refuses2die.interfimpl.V2Command",
+	"jarHashCode":"f40040194e5f889b316ce57b36866f86",
 	"packageUrl":"http://localhost:8081/2.0.zip",
-	"packageHashCode":"0c54533e091b3fd9beb3aed2a7c78f87",
+	"packageHashCode":"c1adb1a4161fcccffce0d0bb4472504c",
 	"packagePath":"F:/updateProgram/package/2.0.zip",
 	"haveCommands":"true",
-	"duration":"5",
-	"programName":"Editor.exe",
+	"duration":"10",
+	"programName":"testwrapper",
 	"updateProgramRootPath":"F:/updateProgram",
 	"rootPath":"F:/csum",
-	"launchPath":"C:/Users/Administrator/AppData/Local/GitBook_Editor/app-7.0.12/Editor.exe",
+	"launchPath":"F:/csum/bin/InstallApp-NT.bat",
+	"closePath":"F:/csum/bin/UninstallApp-NT.bat",
 	"commandID":"1001",
-	"backFiles":["/bin","/conf","/jdk","/lib","/logs","/plugins","/config.json","/test.exe"],
+	"backFiles":["/bin","/conf","/jdk","/lib","/logs","/plugins","/config.json"],
 	"detail":
 	{
 		"version":2.0,
@@ -29,6 +30,6 @@
 		"isFirstLaunch":"true",
 		"isSuccessInstall":"false",
 		"commandID":"1001",
-		"files": ["/lib/app.jar","/logs/log1.log"]
+		"files": ["/lib/app.jar"]
 	}
 }
